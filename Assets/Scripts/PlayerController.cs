@@ -1,36 +1,57 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed;
-    public float rotation;
+    public List<AxleInfo> axleInfos;
+    public float maxMotorTorque;
+    public float maxSteeringAngle;
 
-    private Rigidbody rb;
-    private const float multiplier = 10;
-    private const float maxSpeed = 12;
-
-    private void Start()
+    public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
-        rb = GetComponent<Rigidbody>();
-        speed *= rb.mass * multiplier;
-        rotation *= rb.mass * multiplier;
-        rb.maxAngularVelocity = 1f;
+        if (collider.transform.childCount == 0)
+            return;
+
+        Transform visualWheel = collider.transform.GetChild(0);
+
+        Vector3 position;
+        Quaternion rotation;
+        collider.GetWorldPose(out position, out rotation);
+
+        visualWheel.transform.position = position;
+        visualWheel.transform.rotation = rotation;
     }
 
     void FixedUpdate()
     {
-        float turningMovement = Input.GetAxis("Horizontal");
-        float linearMovement = Input.GetAxis("Vertical");
+        float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
-        if (rb.velocity.z < maxSpeed)
-            rb.AddForce(transform.forward * linearMovement * speed);
-
-
-        Vector3 torqueForce = transform.up * turningMovement * rotation;
-        if (linearMovement < 0) torqueForce = -torqueForce;
-        rb.AddTorque(torqueForce);
-
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            if (axleInfo.steering)
+            {
+                axleInfo.leftWheel.steerAngle = steering;
+                axleInfo.rightWheel.steerAngle = steering;
+            }
+            if (axleInfo.motor)
+            {
+                axleInfo.leftWheel.motorTorque = motor;
+                axleInfo.rightWheel.motorTorque = motor;
+            }
+            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+        }
     }
 
+}
+
+[System.Serializable]
+public class AxleInfo
+{
+    public WheelCollider leftWheel;
+    public WheelCollider rightWheel;
+    public bool motor;
+    public bool steering;
 }
