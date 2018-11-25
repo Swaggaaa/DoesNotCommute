@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cce0e9a4a36704438e7a21fa6e26116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   rotation: 4
 --- !u!1 &873914148
 GameObject:
@@ -617,6 +617,15 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rotation
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663436209126694, guid: 0c015dbff2c36e94089df72dedec0b0e, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 54496089765812116, guid: 0c015dbff2c36e94089df72dedec0b0e,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c015dbff2c36e94089df72dedec0b0e, type: 2}
