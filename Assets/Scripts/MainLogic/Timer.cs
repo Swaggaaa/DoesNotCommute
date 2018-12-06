@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour {
             GlobalValues.TimeLeft -= Time.deltaTime;
         }
 
-        if (GlobalValues.TimeLeft <= 50f)
+        if (GlobalValues.TimeLeft <= 0.0f)
         {
             GlobalValues.Running = false;
             GlobalValues.Lost = true;

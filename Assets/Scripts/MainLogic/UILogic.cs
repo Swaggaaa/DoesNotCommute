@@ -21,7 +21,13 @@ public class UILogic : MonoBehaviour {
         { 
             lostPanel.SetActive(true);
             Color color = lostPanel.GetComponent<Image>().color;
-            lostPanel.GetComponent<Image>().CrossFadeColor(new Color(color.r, color.g, color.b, 0.61f), 2.0f, false, true);
+            lostPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
+        }
+        else if (GlobalValues.Won)
+        {
+            winPanel.SetActive(true);
+            Color color = winPanel.GetComponent<Image>().color;
+            winPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
         }
 	}
 }
