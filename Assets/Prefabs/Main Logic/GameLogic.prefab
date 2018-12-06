@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224776591785668556}
   - component: {fileID: 114560224891342142}
+  - component: {fileID: 114026019550907010}
+  - component: {fileID: 114830601930016518}
   m_Layer: 5
   m_Name: GameLogic
   m_TagString: Untagged
@@ -27,6 +29,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114026019550907010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877949624759762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1f147823b74414cb0eeaff1ea00079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winPanel: {fileID: 0}
+  lostPanel: {fileID: 0}
 --- !u!114 &114560224891342142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -39,6 +54,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
+--- !u!114 &114830601930016518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877949624759762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82983316e21db364abc24c1a9200ae28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redRing: {fileID: 1224597806126770, guid: 5e9c9b8c0ad36464e9adabcb998bc3a7, type: 2}
+  greenRing: {fileID: 1368708041670228, guid: 84351bf4af88c26499367c6b8fbd6f32, type: 2}
 --- !u!224 &224776591785668556
 RectTransform:
   m_ObjectHideFlags: 1
