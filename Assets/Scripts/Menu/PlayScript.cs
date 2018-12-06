@@ -16,7 +16,7 @@ public class PlayScript : MonoBehaviour {
         playPressed = false;
         tvPosition = transform.position;
         Button button = gameObject.GetComponent<Button>();
-        button.onClick.AddListener(playListener);
+        button.onClick.AddListener(PlayListener);
 	}
 	
 	// Update is called once per frame
@@ -24,16 +24,16 @@ public class PlayScript : MonoBehaviour {
 		
 	}
 
-    IEnumerator playGame()
+    IEnumerator PlayGame()
     {
         playPressed = true;
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("SampleScene");
     }
 
-    void playListener()
+    void PlayListener()
     {
-        StartCoroutine(playGame());
+        StartCoroutine(PlayGame());
     }
 
     void LateUpdate()

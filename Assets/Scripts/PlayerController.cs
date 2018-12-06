@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!GlobalValues.Running)
+            return;
+
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 

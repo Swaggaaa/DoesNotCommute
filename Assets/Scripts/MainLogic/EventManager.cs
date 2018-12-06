@@ -9,21 +9,21 @@ public class EventManager : MonoBehaviour {
     private static EventManager eventManager;
 
 	// Singleton
-    public static EventManager instance
+    public static EventManager Instance
     {
         get
         {
             if (!eventManager)
             {
                 eventManager = FindObjectOfType<EventManager>();
-                eventManager.initializeEventManager();
+                eventManager.InitializeEventManager();
             }
 
             return eventManager;
         }
     }
 
-    private void initializeEventManager()
+    private void InitializeEventManager()
     {
         if (events == null)
         {
@@ -34,7 +34,7 @@ public class EventManager : MonoBehaviour {
     public static void StartListener(string eventName, UnityAction action)
     {
         UnityEvent unityEvent;
-        if (instance.events.TryGetValue(eventName, out unityEvent))
+        if (Instance.events.TryGetValue(eventName, out unityEvent))
         {
             unityEvent.AddListener(action);
         }
@@ -42,7 +42,7 @@ public class EventManager : MonoBehaviour {
         {
             unityEvent = new UnityEvent();
             unityEvent.AddListener(action);
-            instance.events.Add(eventName, unityEvent);
+            Instance.events.Add(eventName, unityEvent);
         }
     }
 
@@ -52,7 +52,7 @@ public class EventManager : MonoBehaviour {
             return;
 
         UnityEvent unityEvent;
-        if (instance.events.TryGetValue(eventName, out unityEvent))
+        if (Instance.events.TryGetValue(eventName, out unityEvent))
         {
             unityEvent.RemoveListener(action);
         }
@@ -65,7 +65,7 @@ public class EventManager : MonoBehaviour {
     public static void Trigger(string eventName)
     {
         UnityEvent unityEvent;
-        if (instance.events.TryGetValue(eventName, out unityEvent))
+        if (Instance.events.TryGetValue(eventName, out unityEvent))
         {
             unityEvent.Invoke();
         }

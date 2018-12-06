@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ public static class GlobalValues {
     public static bool Running { get; set; }
     public static bool Lost { get; set; }
     public static bool Won { get; set; }
-    public static GameObject currentCar { get; set; }
+    public static GameObject CurrentCar { get; set; }
+    public static Stage CurrentStage { get; set; }
 
     static GlobalValues()
     {
@@ -16,6 +18,7 @@ public static class GlobalValues {
         Running = false;
         Lost = false;
         Won = false;
-        currentCar = null;
+        CurrentCar = null;
+        CurrentStage = Stage1.Instance;
     }
 }

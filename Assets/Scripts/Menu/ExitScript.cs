@@ -8,7 +8,7 @@ public class ExitScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Button button = gameObject.GetComponent<Button>();
-        button.onClick.AddListener(exitListener);
+        button.onClick.AddListener(ExitListener);
 	}
 	
 	// Update is called once per frame
@@ -16,7 +16,7 @@ public class ExitScript : MonoBehaviour {
 		
 	}
 
-    void exitListener()
+    void ExitListener()
     {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

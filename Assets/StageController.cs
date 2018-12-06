@@ -12,44 +12,61 @@ public class StageController : MonoBehaviour {
 
     void OnEnable()
     {
-        EventManager.StartListener("NewCar", spawnCar);
+        EventManager.StartListener("NewCar", SpawnCar);
     }
 
     void OnDisable()
     {
-        EventManager.StopListener("NewCar", spawnCar);
+        EventManager.StopListener("NewCar", SpawnCar);
     }
 
-    // Use this for initialization
-    void Start () {
-        StartCoroutine(startGame());
+    void Start ()
+    {
+        EventManager.Trigger("NewCar");
     }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
-    private IEnumerator startGame()
+    void SpawnCar()
     {
-        yield return new WaitForSeconds(2f);
-        EventManager.Trigger("NewCar");
+        GlobalValues.Running = false;
+ 
+        RemoveExistingEntities();
 
-        GlobalValues.Running = true;
-    }
-
-    void spawnCar()
-    {
-        GameObject startPoint = Instantiate(redRing, Stage1.BeginPositions[currentCarNum], Quaternion.identity);
-        GameObject endPoint = Instantiate(greenRing, Stage1.EndPositions[currentCarNum], Quaternion.identity);
-        GameObject car = Instantiate(Stage1.Cars[currentCarNum], startPoint.transform.position, Quaternion.identity);
+        GameObject startPoint = Instantiate(redRing, GlobalValues.CurrentStage.BeginPositions[currentCarNum], Quaternion.identity);
+        GameObject endPoint = Instantiate(greenRing, GlobalValues.CurrentStage.EndPositions[currentCarNum], Quaternion.identity);
+        GameObject car = Instantiate(GlobalValues.CurrentStage.Cars[currentCarNum], startPoint.transform.position, Quaternion.identity);
 
         startPoint.transform.Rotate(-90f, 0f, 0f);
         endPoint.transform.Rotate(-90f, 0f, 0f);
-        car.transform.Rotate(Stage1.BeginRotations[currentCarNum]);
+        car.transform.Rotate(GlobalValues.CurrentStage.BeginRotations[currentCarNum]);
         currentCarNum++;
 
-        GlobalValues.currentCar = car;
+        GlobalValues.CurrentCar = car;
         EventManager.Trigger("NewCarCamera");
+    }
+
+    private void RemoveExistingEntities()
+    {
+        GameObject[] cars = GameObject.FindGameObjectsWithTag("Car");
+        for (int i = 0; i < cars.Length; ++i)
+        {
+            Destroy(cars[i]);
+        }
+
+        GameObject[] rings = GameObject.FindGameObjectsWithTag("Ring");
+        for (int i = 0; i < rings.Length; ++i)
+        {
+            Destroy(rings[i]);
+        }
+
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+        for (int i = 0; i < coins.Length; ++i)
+        {
+            Destroy(coins[i]);
+        }
     }
 }

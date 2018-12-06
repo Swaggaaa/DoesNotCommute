@@ -29,6 +29,9 @@ public class Coin : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!GlobalValues.CurrentCar || !other.transform.IsChildOf(GlobalValues.CurrentCar.transform))
+            return;
+
         GlobalValues.TimeLeft += 10.0f;
         GetComponent<Collider>().enabled = false;
         GetComponent<Animator>().Play("PickUpCoin");
