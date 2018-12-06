@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4853332334666988}
   - component: {fileID: 33465987239163584}
   - component: {fileID: 23611653706497742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrafficW1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4970119750737538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4320449135538454}
   - component: {fileID: 33850484350900758}
   - component: {fileID: 23195079358763124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrafficW1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4957433173844376}
   - component: {fileID: 146831818238954818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4862418941184312}
   - component: {fileID: 33045959076639048}
   - component: {fileID: 23628372635158996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrafficW1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4898300814709276}
   - component: {fileID: 33314588433896308}
   - component: {fileID: 23265097025421984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrafficW1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4708839719169726}
   - component: {fileID: 146100069026910134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 33704980425256744}
   - component: {fileID: 23990100629673322}
   - component: {fileID: 65114202251359168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 4945614067402274}
   - component: {fileID: 54555938840178434}
   - component: {fileID: 114640262368307478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car1-Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4429996342725510}
   - component: {fileID: 146763145751499482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4442438879693622}
   - component: {fileID: 146190641655056000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
