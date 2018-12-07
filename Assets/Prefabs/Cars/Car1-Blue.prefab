@@ -748,7 +748,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!65 &65519052591701520
 BoxCollider:
@@ -760,8 +760,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2124543, y: 1.6280802, z: 5.0189056}
-  m_Center: {x: -0.00000023841858, y: 0.008244693, z: 0}
+  m_Size: {x: 2.2124543, y: 1.3044256, z: 5.018906}
+  m_Center: {x: -0.00000022351742, y: 0.17007202, z: 0}
 --- !u!82 &82570066366650382
 AudioSource:
   m_ObjectHideFlags: 1
