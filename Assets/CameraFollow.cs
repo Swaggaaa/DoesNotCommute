@@ -9,11 +9,13 @@ public class CameraFollow : MonoBehaviour {
     void OnEnable()
     {
         EventManager.StartListener("NewCarCamera", UpdateTarget);
+        EventManager.StartListener("RespawnCarCamera", RespawnTarget);
     }
 
     void OnDisable()
     {
         EventManager.StopListener("NewCarCamera", UpdateTarget);
+        EventManager.StopListener("RespawnCarCamera", RespawnTarget);
     }
 
     // Use this for initialization
@@ -35,6 +37,11 @@ public class CameraFollow : MonoBehaviour {
         StartCoroutine(PreviewMap());
     }
 
+    private void RespawnTarget()
+    {
+        StartCoroutine(PreviewCar());
+    }
+
     IEnumerator PreviewMap()
     {
         float elapsedTime = 0f;
@@ -49,8 +56,14 @@ public class CameraFollow : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
 
-        elapsedTime = 0f;
-        startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        yield return StartCoroutine(PreviewCar());
+        EventManager.Trigger("StartPlay");
+    }
+
+    IEnumerator PreviewCar()
+    {
+        float elapsedTime = 0f;
+        Vector3 startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         while (elapsedTime < 3)
         {
@@ -61,6 +74,5 @@ public class CameraFollow : MonoBehaviour {
         }
 
         GlobalValues.Running = true;
-        EventManager.Trigger("StartPlay");
     }
 }

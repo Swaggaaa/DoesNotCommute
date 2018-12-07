@@ -7,6 +7,19 @@ public class PlayerController : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
+    public float maxHealth;
+
+    //0f - 1f
+    public float HealthNormalized
+    {
+        get
+        {
+            return Health / maxHealth;
+        }
+    }
+
+    //0f - maxHealth
+    public float Health { get; set; }
 
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
@@ -23,6 +36,10 @@ public class PlayerController : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
+    void Start()
+    {
+        Health = maxHealth;
+    }
     void FixedUpdate()
     {
         if (!GlobalValues.Running || GlobalValues.CurrentCar != gameObject)

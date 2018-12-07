@@ -7,6 +7,8 @@ public class UILogic : MonoBehaviour {
 
     public GameObject winPanel;
     public GameObject lostPanel;
+    public Text speedometer;
+    public Slider healthSlider;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +30,17 @@ public class UILogic : MonoBehaviour {
             winPanel.SetActive(true);
             Color color = winPanel.GetComponent<Image>().color;
             winPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
+        }
+
+        if (GlobalValues.CurrentCar != null)
+        {
+            speedometer.text = (GlobalValues.CurrentCar.GetComponent<Rigidbody>().velocity.magnitude * 10f).ToString("0.0") + " u/s";
+            healthSlider.value = GlobalValues.CurrentCar.GetComponent<PlayerController>().HealthNormalized;
+        }
+        else
+        {
+            speedometer.text = "0 u/s";
+            healthSlider.value = 0f;
         }
 	}
 }

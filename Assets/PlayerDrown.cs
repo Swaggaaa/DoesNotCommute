@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerEnter : MonoBehaviour {
+public class PlayerDrown : MonoBehaviour {
 
-    private bool triggered = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,13 +16,14 @@ public class PlayerEnter : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
+        Debug.Log(name);
         if (!GlobalValues.CurrentCar)
             return;
 
-        if (other.transform.IsChildOf(GlobalValues.CurrentCar.transform) && !triggered)
+        if (other.transform.IsChildOf(GlobalValues.CurrentCar.transform))
         {
-            triggered = true;
-            EventManager.Trigger("NewCar");
+            EventManager.Trigger("RespawnCar");
         }
     }
 }

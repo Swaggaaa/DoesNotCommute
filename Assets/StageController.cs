@@ -16,12 +16,14 @@ public class StageController : MonoBehaviour {
     {
         EventManager.StartListener("NewCar", SpawnCar);
         EventManager.StartListener("StartPlay", OnStartPlay);
+        EventManager.StartListener("RespawnCar", RespawnCar);
     }
 
     void OnDisable()
     {
         EventManager.StopListener("NewCar", SpawnCar);
         EventManager.StopListener("StartPlay", OnStartPlay);
+        EventManager.StopListener("RespawnCar", RespawnCar);
     }
 
     void Start ()
@@ -58,6 +60,18 @@ public class StageController : MonoBehaviour {
         car.transform.Rotate(GlobalValues.CurrentStage.BeginRotations[currentCarNum]);
 
         EventManager.Trigger("NewCarCamera");
+    }
+
+    void RespawnCar()
+    {
+        GlobalValues.Running = false;
+
+        Destroy(GlobalValues.CurrentCar);
+        GameObject car = Instantiate(GlobalValues.CurrentStage.Cars[currentCarNum], GlobalValues.CurrentStage.BeginPositions[currentCarNum], Quaternion.identity);
+        GlobalValues.CurrentCar = car;
+        car.transform.Rotate(GlobalValues.CurrentStage.BeginRotations[currentCarNum]);
+
+        EventManager.Trigger("RespawnCarCamera");
     }
 
     void OnStartPlay()

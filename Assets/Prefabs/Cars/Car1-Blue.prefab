@@ -605,6 +605,7 @@ MonoBehaviour:
     steering: 0
   maxMotorTorque: 400
   maxSteeringAngle: 30
+  maxHealth: 100
 --- !u!146 &146321782352808564
 WheelCollider:
   m_ObjectHideFlags: 1
