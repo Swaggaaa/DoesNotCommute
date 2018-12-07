@@ -43,6 +43,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 0}
   lostPanel: {fileID: 0}
+  speedometer: {fileID: 0}
+  healthSlider: {fileID: 0}
 --- !u!114 &114560224891342142
 MonoBehaviour:
   m_ObjectHideFlags: 1

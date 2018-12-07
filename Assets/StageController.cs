@@ -76,6 +76,7 @@ public class StageController : MonoBehaviour {
 
     void OnStartPlay()
     {
+        GlobalValues.Running = true;
         GameObject[] rings = GameObject.FindGameObjectsWithTag("Ring");
         foreach (GameObject ring in rings)
         {
