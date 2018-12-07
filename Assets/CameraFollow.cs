@@ -61,5 +61,6 @@ public class CameraFollow : MonoBehaviour {
         }
 
         GlobalValues.Running = true;
+        EventManager.Trigger("StartPlay");
     }
 }

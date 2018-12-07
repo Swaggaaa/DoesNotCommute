@@ -19,7 +19,17 @@ public abstract class Stage {
         get;
     }
 
+    public abstract List<Vector3> CoinPositions
+    {
+        get;
+    }
+
     public abstract List<GameObject> Cars
+    {
+        get;
+    }
+
+    public abstract List<List<Path>> RecordedPaths
     {
         get;
     }

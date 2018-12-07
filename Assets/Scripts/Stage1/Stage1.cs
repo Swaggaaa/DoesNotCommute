@@ -66,12 +66,12 @@ public class Stage1 : Stage
     private readonly List<Vector3> endPositions = new List<Vector3>
     {
         new Vector3(-14f, 0.25f, -0.3f),
-        new Vector3(2.35f, 0.25f, -2f),
         new Vector3(-16f, 0.25f, -12f),
+        new Vector3(2.35f, 0.25f, -2f),
         new Vector3(2.35f, 0.25f, -26f),
         new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-16f, 0.25f, -8f),
         new Vector3(-10f, 0.25f, -25f),
+        new Vector3(-16f, 0.25f, -8f),
         new Vector3(-14f, 0.25f, -23f),
         new Vector3(-16f, 0.25f, -22f),
         new Vector3(-10f, 0.25f, -19f),
@@ -82,18 +82,18 @@ public class Stage1 : Stage
 
     private readonly List<Vector3> coinPositions = new List<Vector3>
     {
+        new Vector3(-8f, 0.5f, -11f),
+        new Vector3(),
+        new Vector3(),
+        new Vector3(),
+        new Vector3(-8f, 0.5f, -11f),
+        new Vector3(-4f, 0.25f, -16f),
+        new Vector3(),
+        new Vector3(),
+        new Vector3(-8f, 0.5f, -11f),
         new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
-        new Vector3(-6f, 0.25f, -0.3f),
+        new Vector3(),
+        new Vector3(-4f, 0.25f, -16f),
         new Vector3(-6f, 0.25f, -0.3f)
     };
 
@@ -111,6 +111,23 @@ public class Stage1 : Stage
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab")
+    };
+
+    private List<List<Path>> recordedPaths = new List<List<Path>>()
+    {
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>(),
+        new List<Path>()
     };
 
     public override List<Vector3> BeginPositions
@@ -137,6 +154,14 @@ public class Stage1 : Stage
         }
     }
 
+    public override List<Vector3> CoinPositions
+    {
+        get
+        {
+            return coinPositions;
+        }
+    }
+
     public override List<GameObject> Cars
     {
         get
@@ -150,6 +175,14 @@ public class Stage1 : Stage
         get
         {
             return cameraCenterStage;
+        }
+    }
+
+    public override List<List<Path>> RecordedPaths
+    {
+        get
+        {
+            return recordedPaths;
         }
     }
 }

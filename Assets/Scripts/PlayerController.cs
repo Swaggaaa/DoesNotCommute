@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!GlobalValues.Running)
+        if (!GlobalValues.Running || GlobalValues.CurrentCar != gameObject)
             return;
 
         float motor = maxMotorTorque * Input.GetAxis("Vertical");

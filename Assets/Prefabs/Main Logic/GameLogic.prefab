@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114560224891342142}
   - component: {fileID: 114026019550907010}
   - component: {fileID: 114830601930016518}
+  - component: {fileID: 114801331949144554}
   m_Layer: 5
   m_Name: GameLogic
   m_TagString: Untagged
@@ -54,6 +55,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
+--- !u!114 &114801331949144554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877949624759762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1839b4abc592bf141a3a3e7c12ea7806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114830601930016518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redRing: {fileID: 1224597806126770, guid: 5e9c9b8c0ad36464e9adabcb998bc3a7, type: 2}
   greenRing: {fileID: 1368708041670228, guid: 84351bf4af88c26499367c6b8fbd6f32, type: 2}
+  coin: {fileID: 1396481856245864, guid: b265a8018f8d3be419b5f4c17c7c156a, type: 2}
 --- !u!224 &224776591785668556
 RectTransform:
   m_ObjectHideFlags: 1
