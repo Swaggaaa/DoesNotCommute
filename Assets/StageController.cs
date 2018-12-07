@@ -74,6 +74,8 @@ public class StageController : MonoBehaviour {
         for (int i = 0; i < currentCarNum; ++i)
         {
             playedCars.Add(Instantiate(GlobalValues.CurrentStage.Cars[i], GlobalValues.CurrentStage.BeginPositions[i], Quaternion.identity));
+            playedCars[i].GetComponentInChildren<Rigidbody>().useGravity = false;
+            playedCars[i].GetComponentInChildren<Rigidbody>().isKinematic = true;
         }
 
         StartCoroutine(RecordPath());
@@ -91,7 +93,7 @@ public class StageController : MonoBehaviour {
             GlobalValues.CurrentStage.RecordedPaths[currentCarNum].Add(
                 new Path(GlobalValues.CurrentCar.transform.position, GlobalValues.CurrentCar.transform.rotation));
 
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
     }
 
@@ -99,10 +101,10 @@ public class StageController : MonoBehaviour {
     {
         foreach (Path path in GlobalValues.CurrentStage.RecordedPaths[carNum])
         {
-            playedCars[carNum].transform.position = path.Position;
-            playedCars[carNum].transform.rotation = path.Rotation;
+            playedCars[carNum].GetComponentInChildren<Rigidbody>().MovePosition(path.Position);
+            playedCars[carNum].GetComponentInChildren<Rigidbody>().MoveRotation(path.Rotation);
 
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
 
         playedCars[carNum].GetComponentInChildren<Collider>().enabled = false;
