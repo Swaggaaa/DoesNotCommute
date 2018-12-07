@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class UILogic : MonoBehaviour {
     public GameObject lostPanel;
     public Text speedometer;
     public Slider healthSlider;
+    public GameObject gpsArrow;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +43,15 @@ public class UILogic : MonoBehaviour {
         {
             speedometer.text = "0 u/s";
             healthSlider.value = 0f;
+        }
+
+        GameObject ring = GameObject.FindGameObjectsWithTag("Ring")
+            .Where(r => r.name.Contains("Green"))
+            .FirstOrDefault();
+
+        if (ring != null)
+        {
+            gpsArrow.transform.LookAt(new Vector3(ring.transform.position.x, gpsArrow.transform.position.y, ring.transform.position.z));
         }
 	}
 }

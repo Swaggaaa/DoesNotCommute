@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class StageController : MonoBehaviour {
 
@@ -83,6 +84,12 @@ public class StageController : MonoBehaviour {
     void SpawnCar()
     {
         currentCarNum++;
+
+        if (currentCarNum >= GlobalValues.CurrentStage.Cars.Capacity)
+        {
+            SceneManager.LoadScene(GlobalValues.CurrentStage.NextStageName);
+            return;
+        }
         GlobalValues.Running = false;
         StopAllCoroutines();
  
@@ -198,5 +205,6 @@ public class StageController : MonoBehaviour {
         }
 
         playedCars.Clear();
+        GameObject.FindGameObjectWithTag("Arrow").GetComponentInChildren<Renderer>().enabled = false;
     }
 }

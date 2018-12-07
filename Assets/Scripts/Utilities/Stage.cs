@@ -43,4 +43,9 @@ public abstract class Stage {
     {
         get;
     }
+
+    public abstract string NextStageName
+    {
+        get;
+    }
 }

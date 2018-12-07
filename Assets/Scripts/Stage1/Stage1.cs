@@ -132,6 +132,8 @@ public class Stage1 : Stage
 
     private Bounds bounds = new Bounds(new Vector3(-7f, 0f, -15f), new Vector3(22f, 0f, 34f));
 
+    private string nextStageName = "Stage2";
+
     public override List<Vector3> BeginPositions
     {
         get
@@ -193,6 +195,14 @@ public class Stage1 : Stage
         get
         {
             return bounds;
+        }
+    }
+
+    public override string NextStageName
+    {
+        get
+        {
+            return nextStageName;
         }
     }
 }

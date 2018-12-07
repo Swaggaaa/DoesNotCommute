@@ -62,6 +62,8 @@ public class CameraFollow : MonoBehaviour {
 
     IEnumerator PreviewCar()
     {
+        GameObject.FindGameObjectWithTag("Arrow").GetComponentInChildren<Renderer>().enabled = true;
+
         float elapsedTime = 0f;
         Vector3 startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
