@@ -15,6 +15,9 @@ public class CrashSound : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (GlobalValues.CurrentCar != gameObject || collision.collider.isTrigger)
+            return;
+
         source.PlayOneShot(shootSound, 1F);    
     }
 }
