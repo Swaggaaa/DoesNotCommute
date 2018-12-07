@@ -38,4 +38,9 @@ public abstract class Stage {
     {
         get;
     }
+
+    public abstract Bounds Bounds
+    {
+        get;
+    }
 }

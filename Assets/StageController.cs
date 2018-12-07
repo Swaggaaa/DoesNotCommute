@@ -8,6 +8,7 @@ public class StageController : MonoBehaviour {
     public GameObject redRing;
     public GameObject greenRing;
     public GameObject coin;
+    public GameObject enclosingTerrain;
 
     private int currentCarNum = -1;
     private List<GameObject> playedCars = new List<GameObject>();
@@ -26,8 +27,9 @@ public class StageController : MonoBehaviour {
         EventManager.StopListener("RespawnCar", RespawnCar);
     }
 
-    void Start ()
+    void Start()
     {
+        DrawBoundingWater();
         EventManager.Trigger("NewCar");
     }
 	
@@ -35,6 +37,48 @@ public class StageController : MonoBehaviour {
     {
 		
 	}
+
+    private void DrawBoundingWater()
+    {
+        Bounds bounds = GlobalValues.CurrentStage.Bounds;
+
+        //Left
+        for (int i = Mathf.RoundToInt(-1 * bounds.size.x / 2); i <= bounds.size.x; ++i)
+        {
+            for (int j = 0; j <= bounds.size.z / 2; ++j)
+            {
+                Instantiate(enclosingTerrain, new Vector3(bounds.min.x + i * 2f, bounds.min.y, bounds.min.z - j * 2f), Quaternion.Euler(-90f, 180f, -90f));
+            }
+        }
+
+        //Up
+        for (int i = 0; i <= bounds.size.x / 2; ++i)
+        {
+            for (int j = 0; j <= bounds.size.z / 2; ++j)
+            {
+                Instantiate(enclosingTerrain, new Vector3(bounds.min.x - i * 2f, bounds.min.y, bounds.min.z + j * 2f), Quaternion.Euler(-90f, 180f, -90f));
+            }
+        }
+
+        //Right
+        for (int i = Mathf.RoundToInt(-1 * bounds.size.x / 2); i <= bounds.size.x; ++i)
+        {
+            for (int j = 0; j <= bounds.size.z / 2; ++j)
+            {
+                Instantiate(enclosingTerrain, new Vector3(bounds.min.x + i * 2f, bounds.min.y, bounds.max.z + j * 2f), Quaternion.Euler(-90f, 180f, -90f));
+            }
+        }
+
+        //Down
+        for (int i = 0; i <= bounds.size.x / 2; ++i)
+        {
+            for (int j = 0; j <= bounds.size.z / 2; ++j)
+            {
+                Instantiate(enclosingTerrain, new Vector3(bounds.max.x + i * 2f, bounds.min.y, bounds.min.z + j * 2f), Quaternion.Euler(-90f, 180f, -90f));
+            }
+        }
+
+    }
 
     void SpawnCar()
     {

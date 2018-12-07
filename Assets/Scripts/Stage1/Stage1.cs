@@ -130,6 +130,8 @@ public class Stage1 : Stage
         new List<Path>()
     };
 
+    private Bounds bounds = new Bounds(new Vector3(-7f, 0f, -15f), new Vector3(22f, 0f, 34f));
+
     public override List<Vector3> BeginPositions
     {
         get
@@ -183,6 +185,14 @@ public class Stage1 : Stage
         get
         {
             return recordedPaths;
+        }
+    }
+
+    public override Bounds Bounds
+    {
+        get
+        {
+            return bounds;
         }
     }
 }
