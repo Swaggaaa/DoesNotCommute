@@ -973,6 +973,7 @@ MonoBehaviour:
   maxMotorTorque: 160
   maxSteeringAngle: 45
   maxHealth: 100
+  maxVelocity: 10
   centerOfMassModifier: {x: 0, y: -0.3, z: 0}
 --- !u!114 &114680213824457830
 MonoBehaviour:
