@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        offset = new Vector3(4f, 5f, 0f);
+        offset = new Vector3(4f, 10f, 0f);
     }
 	
 	void FixedUpdate () {

@@ -28,7 +28,7 @@ public class PlayScript : MonoBehaviour {
     {
         playPressed = true;
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Stage1");
     }
 
     void PlayListener()

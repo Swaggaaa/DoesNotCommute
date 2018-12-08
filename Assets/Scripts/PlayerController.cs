@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float maxHealth;
+    public Vector3 centerOfMassModifier;
 
     //0f - 1f
     public float HealthNormalized
@@ -39,7 +40,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Health = maxHealth;
+        GetComponent<Rigidbody>().centerOfMass += centerOfMassModifier;
     }
+
     void FixedUpdate()
     {
         if (!GlobalValues.Running || GlobalValues.CurrentCar != gameObject)
@@ -63,6 +66,7 @@ public class PlayerController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+
     }
 
 }

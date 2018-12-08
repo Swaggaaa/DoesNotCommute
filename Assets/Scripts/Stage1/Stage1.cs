@@ -27,7 +27,7 @@ public class Stage1 : Stage
     }
 
     //Ugly, should be calculated
-    private readonly Vector3 cameraCenterStage = new Vector3(-7f, 20f, -15f);
+    private readonly Vector3 cameraCenterStage = new Vector3(-7f, 23f, -15f);
 
     private readonly List<Vector3> beginPositions = new List<Vector3>
     {
