@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerEnter : MonoBehaviour {
+
+    public AudioClip goalClip;
 
     private bool triggered = false;
 	// Use this for initialization
@@ -22,6 +22,7 @@ public class PlayerEnter : MonoBehaviour {
 
         if (other.transform.IsChildOf(GlobalValues.CurrentCar.transform) && !triggered)
         {
+            GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(goalClip);
             triggered = true;
             EventManager.Trigger("NewCar");
         }

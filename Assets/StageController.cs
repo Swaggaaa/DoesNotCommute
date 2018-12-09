@@ -36,8 +36,8 @@ public class StageController : MonoBehaviour {
         DrawBoundingWater();
         EventManager.Trigger("NewCar");
     }
-	
-	void Update ()
+
+    void Update ()
     {
 		
 	}
