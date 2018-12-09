@@ -45,6 +45,7 @@ MonoBehaviour:
   lostPanel: {fileID: 0}
   speedometer: {fileID: 0}
   healthSlider: {fileID: 0}
+  gpsArrow: {fileID: 0}
 --- !u!114 &114560224891342142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,6 +83,8 @@ MonoBehaviour:
   redRing: {fileID: 1224597806126770, guid: 5e9c9b8c0ad36464e9adabcb998bc3a7, type: 2}
   greenRing: {fileID: 1368708041670228, guid: 84351bf4af88c26499367c6b8fbd6f32, type: 2}
   coin: {fileID: 1396481856245864, guid: b265a8018f8d3be419b5f4c17c7c156a, type: 2}
+  enclosingTerrain: {fileID: 1914793130696968, guid: 11045f3b915c42d48b27b76d9609a4ab,
+    type: 2}
 --- !u!224 &224776591785668556
 RectTransform:
   m_ObjectHideFlags: 1
