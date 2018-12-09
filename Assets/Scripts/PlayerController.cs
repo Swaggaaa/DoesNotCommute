@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float maxHealth;
+    public float maxVelocity;
     public Vector3 centerOfMassModifier;
 
     //0f - 1f
@@ -51,6 +52,9 @@ public class PlayerController : MonoBehaviour
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
+        if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
+            motor = 0;
+
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.steering)
@@ -66,6 +70,7 @@ public class PlayerController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+
 
     }
 
