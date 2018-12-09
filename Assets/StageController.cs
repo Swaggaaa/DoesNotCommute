@@ -10,6 +10,7 @@ public class StageController : MonoBehaviour {
     public GameObject greenRing;
     public GameObject coin;
     public GameObject enclosingTerrain;
+    public AudioClip startClip;
 
     private int currentCarNum = -1;
     private List<GameObject> playedCars = new List<GameObject>();
@@ -19,6 +20,7 @@ public class StageController : MonoBehaviour {
         EventManager.StartListener("NewCar", SpawnCar);
         EventManager.StartListener("StartPlay", OnStartPlay);
         EventManager.StartListener("RespawnCar", RespawnCar);
+        EventManager.StartListener("Running", Running);
     }
 
     void OnDisable()
@@ -26,6 +28,7 @@ public class StageController : MonoBehaviour {
         EventManager.StopListener("NewCar", SpawnCar);
         EventManager.StopListener("StartPlay", OnStartPlay);
         EventManager.StopListener("RespawnCar", RespawnCar);
+        EventManager.StopListener("Running", Running);
     }
 
     void Start()
@@ -38,6 +41,11 @@ public class StageController : MonoBehaviour {
     {
 		
 	}
+
+    void Running()
+    {
+        GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(startClip);
+    }
 
     private void DrawBoundingWater()
     {
@@ -128,6 +136,7 @@ public class StageController : MonoBehaviour {
     void OnStartPlay()
     {
         GlobalValues.Running = true;
+
         GameObject[] rings = GameObject.FindGameObjectsWithTag("Ring");
         foreach (GameObject ring in rings)
         {

@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDrown : MonoBehaviour {
+
+    public AudioClip drownClip;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +26,20 @@ public class PlayerDrown : MonoBehaviour {
 
         if (other.transform.IsChildOf(GlobalValues.CurrentCar.transform))
         {
-            EventManager.Trigger("RespawnCar");
+            StartCoroutine(CarDrown());
         }
+    }
+
+    private IEnumerator CarDrown()
+    {
+        float elapsedTime = 0f;
+        GetComponent<AudioSource>().PlayOneShot(drownClip);
+
+        while (elapsedTime < 0.5f)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        EventManager.Trigger("RespawnCar");
     }
 }
