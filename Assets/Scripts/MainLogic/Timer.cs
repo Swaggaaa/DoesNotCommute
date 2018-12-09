@@ -19,6 +19,8 @@ public class Timer : MonoBehaviour {
 
         if (GlobalValues.TimeLeft <= 0.0f)
         {
+            if (!GlobalValues.Lost)
+                EventManager.Trigger("Lost");
             GlobalValues.Running = false;
             GlobalValues.Lost = true;
             timerText.text = "0.0 :'(";

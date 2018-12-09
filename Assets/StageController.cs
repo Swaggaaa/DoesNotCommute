@@ -12,6 +12,7 @@ public class StageController : MonoBehaviour {
     public GameObject enclosingTerrain;
     public AudioSource audioSource;
     public AudioClip startClip;
+    public AudioClip lostClip;
 
     private int currentCarNum = -1;
     private List<GameObject> playedCars = new List<GameObject>();
@@ -22,6 +23,7 @@ public class StageController : MonoBehaviour {
         EventManager.StartListener("StartPlay", OnStartPlay);
         EventManager.StartListener("RespawnCar", RespawnCar);
         EventManager.StartListener("Running", Running);
+        EventManager.StartListener("Lost", Lost);
     }
 
     void OnDisable()
@@ -30,6 +32,7 @@ public class StageController : MonoBehaviour {
         EventManager.StopListener("StartPlay", OnStartPlay);
         EventManager.StopListener("RespawnCar", RespawnCar);
         EventManager.StopListener("Running", Running);
+        EventManager.StopListener("Lost", Lost);
     }
 
     void Start()
@@ -46,6 +49,12 @@ public class StageController : MonoBehaviour {
     void Running()
     {
         audioSource.PlayOneShot(startClip);
+    }
+
+    void Lost()
+    {
+        GameObject.Find("Background Music").GetComponent<AudioSource>().Stop();
+        audioSource.PlayOneShot(lostClip);
     }
 
     private void DrawBoundingWater()

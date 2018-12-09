@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44844872, g: 0.49848646, b: 0.5756318, a: 1}
+  m_IndirectSpecularColor: {r: 0.44844854, g: 0.49848598, b: 0.57563096, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11228,6 +11228,11 @@ Prefab:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 330956702}
+    - target: {fileID: 114830601930016518, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
+        type: 2}
+      propertyPath: lostClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9462c521baf782747bc27be81d714e8f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e1dde4ab95e6d47a7f0d4850e31861, type: 2}
   m_IsPrefabAsset: 0
@@ -17859,6 +17864,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114669960067566526, guid: 61d61591d0cd8ff448d15d248102af7d,
+        type: 2}
+      propertyPath: m_Text
+      value: You lose! :'(
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d61591d0cd8ff448d15d248102af7d, type: 2}
