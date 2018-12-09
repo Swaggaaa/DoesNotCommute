@@ -85,6 +85,8 @@ MonoBehaviour:
   coin: {fileID: 1396481856245864, guid: b265a8018f8d3be419b5f4c17c7c156a, type: 2}
   enclosingTerrain: {fileID: 1914793130696968, guid: 11045f3b915c42d48b27b76d9609a4ab,
     type: 2}
+  audioSource: {fileID: 0}
+  startClip: {fileID: 8300000, guid: 584a790b27aaaa8429f501e3f7abd54e, type: 3}
 --- !u!224 &224776591785668556
 RectTransform:
   m_ObjectHideFlags: 1

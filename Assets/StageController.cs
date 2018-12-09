@@ -10,6 +10,7 @@ public class StageController : MonoBehaviour {
     public GameObject greenRing;
     public GameObject coin;
     public GameObject enclosingTerrain;
+    public AudioSource audioSource;
     public AudioClip startClip;
 
     private int currentCarNum = -1;
@@ -44,7 +45,7 @@ public class StageController : MonoBehaviour {
 
     void Running()
     {
-        GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(startClip);
+        audioSource.PlayOneShot(startClip);
     }
 
     private void DrawBoundingWater()
