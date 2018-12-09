@@ -982,10 +982,10 @@ MonoBehaviour:
     rightWheel: {fileID: 146547701072486198}
     motor: 0
     steering: 0
-  maxMotorTorque: 1000
+  maxMotorTorque: 160
   maxSteeringAngle: 45
   maxHealth: 100
-  maxVelocity: 10
+  maxVelocity: 50
   centerOfMassModifier: {x: 0, y: -0.3, z: 0}
 --- !u!114 &114680213824457830
 MonoBehaviour:

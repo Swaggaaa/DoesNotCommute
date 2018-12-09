@@ -44,6 +44,18 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody>().centerOfMass += centerOfMassModifier;
     }
 
+    void Update()
+    {
+        if (!((Mathf.Abs(transform.localEulerAngles.x) < 135 || Mathf.Abs(transform.localEulerAngles.x) > 225) &&
+                (Mathf.Abs(transform.localEulerAngles.z) <= 90 || Mathf.Abs(transform.localEulerAngles.z) >= 270)))
+        {
+            if (GetComponent<Rigidbody>().velocity.magnitude * 10f <= 1f)
+            {
+                EventManager.Trigger("RespawnCar");
+            }
+        }
+    }
+
     void FixedUpdate()
     {
         if (!GlobalValues.Running || GlobalValues.CurrentCar != gameObject)
@@ -52,7 +64,7 @@ public class PlayerController : MonoBehaviour
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
-        if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
+        if (GetComponent<Rigidbody>().velocity.magnitude * 10f > maxVelocity)
             motor = 0;
 
         foreach (AxleInfo axleInfo in axleInfos)
@@ -69,6 +81,12 @@ public class PlayerController : MonoBehaviour
             }
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+        }
+
+        float stuck = Input.GetAxis("Jump");
+        if (stuck != 0f)
+        {
+            EventManager.Trigger("RespawnCar");
         }
 
 
