@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114416692356058670}
   - component: {fileID: 82570066366650382}
   - component: {fileID: 114680213824457830}
+  - component: {fileID: 114221953702403724}
   m_Layer: 8
   m_Name: Car1-Blue
   m_TagString: Car
@@ -631,7 +632,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1d4a00d4b5e5494448a65440908ae3da, type: 2}
+  - {fileID: 2100000, guid: 4a6d5df70ac7aee49946ebc5f27903fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -950,6 +951,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114221953702403724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093653872095900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9497a6ce3768c247bfe989bd7962d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114416692356058670
 MonoBehaviour:
   m_ObjectHideFlags: 1
