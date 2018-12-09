@@ -49,12 +49,10 @@ public class PlayerController : MonoBehaviour
         if (!GlobalValues.Running || GlobalValues.CurrentCar != gameObject)
             return;
 
-
-        
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
-        if (System.Math.Abs(GetComponent<Rigidbody>().velocity.sqrMagnitude) > maxVelocity)
+        if (GetComponent<Rigidbody>().velocity.sqrMagnitude > maxVelocity)
             motor = 0;
 
         foreach (AxleInfo axleInfo in axleInfos)

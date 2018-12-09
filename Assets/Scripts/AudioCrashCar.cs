@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrashSound : MonoBehaviour {
+public class AudioCrashCar : MonoBehaviour {
 
     public AudioClip shootSound;
 
