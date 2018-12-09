@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ae008328455e042a9742283df67305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalClip: {fileID: 8300000, guid: fb4d580a618cc7a43a6153150052c112, type: 3}
 --- !u!136 &136653838374566716
 CapsuleCollider:
   m_ObjectHideFlags: 1

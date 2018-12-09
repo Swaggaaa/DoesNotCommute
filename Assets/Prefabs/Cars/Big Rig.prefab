@@ -1435,14 +1435,14 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257021105101364}
-  m_Mesh: {fileID: 4300004, guid: e9d96ffec57c82c4face56ee1063eb87, type: 3}
+  m_Mesh: {fileID: 4300034, guid: cd389f3be70b10d43aca898e5b54077e, type: 3}
 --- !u!33 &33933712747842778
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1597388731451906}
-  m_Mesh: {fileID: 4300054, guid: e9d96ffec57c82c4face56ee1063eb87, type: 3}
+  m_Mesh: {fileID: 4300028, guid: cd389f3be70b10d43aca898e5b54077e, type: 3}
 --- !u!33 &33952080583333184
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1470,7 +1470,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!65 &65085283968454348
 BoxCollider:
@@ -1506,7 +1506,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0c990340e4d0945438ad87e19c8fc2d8,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 25662ec454b2907478f3c2143b363026, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61d0c371d2933648bfac766534cc24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSound: {fileID: 8300000, guid: 25662ec454b2907478f3c2143b363026, type: 3}
+  crashSound: {fileID: 8300000, guid: 25662ec454b2907478f3c2143b363026, type: 3}
 --- !u!114 &114533723281053272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1739,11 +1739,11 @@ MonoBehaviour:
     rightWheel: {fileID: 146794310030031164}
     motor: 0
     steering: 0
-  maxMotorTorque: 40000
+  maxMotorTorque: 2000
   maxSteeringAngle: 20
   maxHealth: 500
-  maxVelocity: 30
-  centerOfMassModifier: {x: 0, y: -0.3, z: 0}
+  maxVelocity: 25
+  centerOfMassModifier: {x: 0, y: 0, z: 0}
 --- !u!146 &146137198282929336
 WheelCollider:
   m_ObjectHideFlags: 1

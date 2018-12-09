@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c015857f069bd44811ddc952c50532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinClip: {fileID: 8300000, guid: b5de680bc3fdaf74f94aadde83f81192, type: 3}
 --- !u!135 &135741406972870884
 SphereCollider:
   m_ObjectHideFlags: 1

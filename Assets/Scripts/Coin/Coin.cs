@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Coin : MonoBehaviour {
+
+    public AudioClip coinClip;
 
     private bool disappearing = false;
 
@@ -32,6 +32,7 @@ public class Coin : MonoBehaviour {
         if (!GlobalValues.CurrentCar || !other.transform.IsChildOf(GlobalValues.CurrentCar.transform))
             return;
 
+        GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(coinClip);
         GlobalValues.TimeLeft += 10.0f;
         GetComponent<Collider>().enabled = false;
         GetComponent<Animator>().Play("PickUpCoin");
