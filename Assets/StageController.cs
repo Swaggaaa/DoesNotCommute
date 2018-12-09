@@ -103,7 +103,7 @@ public class StageController : MonoBehaviour {
     {
         currentCarNum++;
 
-        if (currentCarNum >= GlobalValues.CurrentStage.Cars.Capacity)
+        if (currentCarNum >= GlobalValues.CurrentStage.Cars.Count)
         {
             SceneManager.LoadScene(GlobalValues.CurrentStage.NextStageName);
             return;
