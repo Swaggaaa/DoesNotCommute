@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioCrashCar : MonoBehaviour {
 
-    public AudioClip shootSound;
+    public AudioClip crashSound;
 
     private AudioSource source;
 
@@ -20,6 +20,6 @@ public class AudioCrashCar : MonoBehaviour {
                 (Mathf.Abs(transform.localEulerAngles.z) < 75 || Mathf.Abs(transform.localEulerAngles.z) > 285))))
             return;
 
-        source.PlayOneShot(shootSound, 1F);    
+        source.PlayOneShot(crashSound, 1F);    
     }
 }
