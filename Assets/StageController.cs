@@ -36,6 +36,30 @@ public class StageController : MonoBehaviour {
     {
         DrawBoundingWater();
         EventManager.Trigger("NewCar");
+        SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+    }
+
+    // TODO: I don't like this
+    private void SceneManager_activeSceneChanged(Scene oldScene, Scene newScene)
+    {
+        switch (newScene.name)
+        {
+            case "Stage1":
+                GlobalValues.CurrentStage = Stage1.Instance;
+                break;
+
+            case "Stage2":
+                GlobalValues.CurrentStage = Stage2.Instance;
+                break;
+
+            case "Stage3":
+                GlobalValues.CurrentStage = Stage3.Instance;
+                break;
+
+            default:
+                GlobalValues.CurrentStage = null;
+                break;
+        }
     }
 
     void Update ()
@@ -95,7 +119,7 @@ public class StageController : MonoBehaviour {
         currentCarNum++;
 
         if (currentCarNum >= GlobalValues.CurrentStage.Cars.Capacity)
-        {
+        { 
             SceneManager.LoadScene(GlobalValues.CurrentStage.NextStageName);
             return;
         }
