@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-    private Vector3 offset;
+    public Vector3 offset;
 
     void OnEnable()
     {
@@ -20,7 +20,6 @@ public class CameraFollow : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        offset = new Vector3(4f, 10f, 0f);
     }
 	
 	void FixedUpdate () {

@@ -32,7 +32,7 @@ public class Stage2 : Stage
     private readonly List<Vector3> beginPositions = new List<Vector3>
     {
         new Vector3(2f, 0.25f, -6f),
-        new Vector3(4f, 0.25f, -6f),
+        new Vector3(4f, 0.25f, -8f),
         new Vector3(2f, 0.25f, -10f),
         new Vector3(0f, 0.25f, -14f),
         new Vector3(2f, 0.25f, -10f),
@@ -49,14 +49,14 @@ public class Stage2 : Stage
     private readonly List<Vector3> beginRotations = new List<Vector3>
     {
         new Vector3(0f, 180f, 0f),
+        new Vector3(0f, 90f, 0f),
+        new Vector3(0f, 90f, 0f),
+        new Vector3(0f, 90f, 0f),
+        new Vector3(0f, 90f, 0f),
         new Vector3(0f, 180f, 0f),
         new Vector3(0f, -90f, 0f),
-        new Vector3(0f, -90f, 0f),
-        new Vector3(0f, -90f, 0f),
-        new Vector3(0f, 180f, 0f),
         new Vector3(0f, 90f, 0f),
         new Vector3(0f, -90f, 0f),
-        new Vector3(0f, 90f, 0f),
         new Vector3(0f, 0f, 0f),
         new Vector3(0f, 0f, 0f),
         new Vector3(0f, 0f, 0f),
@@ -101,11 +101,11 @@ public class Stage2 : Stage
     private readonly List<GameObject> cars = new List<GameObject>
     {
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Big Rig.prefab"),
+        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Van.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-white.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-red.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Van.prefab"),
+        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Big Rig.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-red.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-white.prefab"),
@@ -131,7 +131,7 @@ public class Stage2 : Stage
         new List<Path>()
     };
 
-    private Bounds bounds = new Bounds(new Vector3(-2f, 0f, -20f), new Vector3(16f, 0f, -4f));
+    private Bounds bounds = new Bounds(new Vector3(7f, 0f, -12f), new Vector3(18f, 0f, 16f));
 
     private string nextStageName = "Stage3";
 

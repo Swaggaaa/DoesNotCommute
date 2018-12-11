@@ -12,6 +12,7 @@ public class StageController : MonoBehaviour {
     public GameObject enclosingTerrain;
     public AudioSource audioSource;
     public AudioClip startClip;
+    public AudioClip lostClip;
 
     private int currentCarNum = -1;
     private List<GameObject> playedCars = new List<GameObject>();
@@ -22,6 +23,7 @@ public class StageController : MonoBehaviour {
         EventManager.StartListener("StartPlay", OnStartPlay);
         EventManager.StartListener("RespawnCar", RespawnCar);
         EventManager.StartListener("Running", Running);
+        EventManager.StartListener("Lost", Lost);
     }
 
     void OnDisable()
@@ -30,6 +32,29 @@ public class StageController : MonoBehaviour {
         EventManager.StopListener("StartPlay", OnStartPlay);
         EventManager.StopListener("RespawnCar", RespawnCar);
         EventManager.StopListener("Running", Running);
+        EventManager.StopListener("Lost", Lost);
+    }
+
+    void Awake()
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Stage1":
+                GlobalValues.CurrentStage = Stage1.Instance;
+                break;
+
+            case "Stage2":
+                GlobalValues.CurrentStage = Stage2.Instance;
+                break;
+
+            case "Stage3":
+                GlobalValues.CurrentStage = Stage3.Instance;
+                break;
+
+            default:
+                GlobalValues.CurrentStage = null;
+                break;
+        }
     }
 
     void Start()
@@ -70,6 +95,12 @@ public class StageController : MonoBehaviour {
     void Running()
     {
         audioSource.PlayOneShot(startClip);
+    }
+
+    void Lost()
+    {
+        GameObject.Find("Background Music").GetComponent<AudioSource>().Stop();
+        audioSource.PlayOneShot(lostClip);
     }
 
     private void DrawBoundingWater()
@@ -118,8 +149,9 @@ public class StageController : MonoBehaviour {
     {
         currentCarNum++;
 
-        if (currentCarNum >= GlobalValues.CurrentStage.Cars.Capacity)
-        { 
+
+        if (currentCarNum >= GlobalValues.CurrentStage.Cars.Count)
+        {
             SceneManager.LoadScene(GlobalValues.CurrentStage.NextStageName);
             return;
         }
