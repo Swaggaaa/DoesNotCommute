@@ -100,12 +100,12 @@ public class Stage1 : Stage
     private readonly List<GameObject> cars = new List<GameObject>
     {
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Van.prefab"),
+        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Taxi.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Big Rig.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-white.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-red.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
+        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Van.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
