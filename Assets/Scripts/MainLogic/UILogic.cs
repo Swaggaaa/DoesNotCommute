@@ -18,22 +18,35 @@ public class UILogic : MonoBehaviour {
         lostPanel.SetActive(false);
 	}
 
+    void OnEnable()
+    {
+        EventManager.StartListener("Won", Won);
+        EventManager.StartListener("Lost", Lost);
+    }
+
+    void OnDisable()
+    {
+        EventManager.StopListener("Won", Won);
+        EventManager.StopListener("Lost", Lost);
+    }
+
+    private void Won()
+    {
+        winPanel.SetActive(true);
+        Color color = winPanel.GetComponent<Image>().color;
+        winPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
+    }
+
+    private void Lost()
+    {
+        lostPanel.SetActive(true);
+        Color color = lostPanel.GetComponent<Image>().color;
+        lostPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
+    }
+
     // Update is called once per frame
     void Update ()
     {
-		if (GlobalValues.Lost)
-        { 
-            lostPanel.SetActive(true);
-            Color color = lostPanel.GetComponent<Image>().color;
-            lostPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
-        }
-        else if (GlobalValues.Won)
-        {
-            winPanel.SetActive(true);
-            Color color = winPanel.GetComponent<Image>().color;
-            winPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
-        }
-
         if (GlobalValues.CurrentCar != null)
         {
             speedometer.text = (GlobalValues.CurrentCar.GetComponent<Rigidbody>().velocity.magnitude * 10f).ToString("0.0") + " u/s";

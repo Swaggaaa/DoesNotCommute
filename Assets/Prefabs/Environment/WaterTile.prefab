@@ -96,7 +96,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.015, y: 0.015, z: 0.005}
+  m_Size: {x: 0.015, y: 0.015, z: 0.001}
   m_Center: {x: 0, y: -0.0000012037342, z: -0.00039545354}
 --- !u!82 &82245399138840868
 AudioSource:

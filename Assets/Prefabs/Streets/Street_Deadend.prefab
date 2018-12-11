@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33250718885149888}
   - component: {fileID: 23821341272348014}
   - component: {fileID: 64309560449151744}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Street_Deadend
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
-        if (GetComponent<Rigidbody>().velocity.magnitude * 10f > maxVelocity)
+        if (GetComponent<Rigidbody>().velocity.magnitude * 10f > maxVelocity * HealthNormalized)
             motor = 0;
 
         foreach (AxleInfo axleInfo in axleInfos)

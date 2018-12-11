@@ -23,6 +23,7 @@ public class StageController : MonoBehaviour {
         EventManager.StartListener("StartPlay", OnStartPlay);
         EventManager.StartListener("RespawnCar", RespawnCar);
         EventManager.StartListener("Running", Running);
+        EventManager.StartListener("Won", Won);
         EventManager.StartListener("Lost", Lost);
     }
 
@@ -32,6 +33,7 @@ public class StageController : MonoBehaviour {
         EventManager.StopListener("StartPlay", OnStartPlay);
         EventManager.StopListener("RespawnCar", RespawnCar);
         EventManager.StopListener("Running", Running);
+        EventManager.StopListener("Won", Won);
         EventManager.StopListener("Lost", Lost);
     }
 
@@ -97,10 +99,24 @@ public class StageController : MonoBehaviour {
         audioSource.PlayOneShot(startClip);
     }
 
+    void Won()
+    {
+        GlobalValues.Won = true;
+        StartCoroutine(LoadScene(GlobalValues.CurrentStage.NextStageName));
+    }
+
     void Lost()
     {
         GameObject.Find("Background Music").GetComponent<AudioSource>().Stop();
         audioSource.PlayOneShot(lostClip);
+
+        LoadScene("MenuScene");
+    }
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(sceneName);
     }
 
     private void DrawBoundingWater()
@@ -152,7 +168,7 @@ public class StageController : MonoBehaviour {
 
         if (currentCarNum >= GlobalValues.CurrentStage.Cars.Count)
         {
-            SceneManager.LoadScene(GlobalValues.CurrentStage.NextStageName);
+            EventManager.Trigger("Won");
             return;
         }
         GlobalValues.Running = false;
@@ -239,7 +255,12 @@ public class StageController : MonoBehaviour {
             yield return new WaitForFixedUpdate();
         }
 
-        playedCars[carNum].GetComponentInChildren<Collider>().enabled = false;
+        Collider[] colliders = playedCars[carNum].GetComponentsInChildren<Collider>();
+
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
 
         MeshRenderer[] renderers = playedCars[carNum].GetComponentsInChildren<MeshRenderer>();
 

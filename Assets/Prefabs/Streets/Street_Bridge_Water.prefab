@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33004449358946392}
   - component: {fileID: 23332397522721864}
   - component: {fileID: 64628261288170572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Street_Bridge_Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}

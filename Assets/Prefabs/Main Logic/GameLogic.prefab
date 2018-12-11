@@ -87,7 +87,7 @@ MonoBehaviour:
     type: 2}
   audioSource: {fileID: 0}
   startClip: {fileID: 8300000, guid: 584a790b27aaaa8429f501e3f7abd54e, type: 3}
-  lostClip: {fileID: 0}
+  lostClip: {fileID: 8300000, guid: 9462c521baf782747bc27be81d714e8f, type: 3}
 --- !u!224 &224776591785668556
 RectTransform:
   m_ObjectHideFlags: 1

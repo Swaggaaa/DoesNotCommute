@@ -1743,7 +1743,7 @@ MonoBehaviour:
   maxSteeringAngle: 20
   maxHealth: 500
   maxVelocity: 25
-  centerOfMassModifier: {x: 0, y: 0, z: 0}
+  centerOfMassModifier: {x: 0, y: -0.3, z: 0}
 --- !u!146 &146137198282929336
 WheelCollider:
   m_ObjectHideFlags: 1
