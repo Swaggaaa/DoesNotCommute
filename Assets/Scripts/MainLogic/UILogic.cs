@@ -33,15 +33,25 @@ public class UILogic : MonoBehaviour {
     private void Won()
     {
         winPanel.SetActive(true);
-        Color color = winPanel.GetComponent<Image>().color;
-        winPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
+        StartCoroutine(FadePanel(winPanel));
     }
 
     private void Lost()
     {
         lostPanel.SetActive(true);
-        Color color = lostPanel.GetComponent<Image>().color;
-        lostPanel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, 2.0f * Time.deltaTime));
+        StartCoroutine(FadePanel(lostPanel));
+    }
+
+    private IEnumerator FadePanel(GameObject panel)
+    {
+        Color color = panel.GetComponent<Image>().color;
+        float elapsedTime = 0f;
+        while (elapsedTime < 2f)
+        {
+            panel.GetComponent<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(color.a, 0.6f, elapsedTime / 2f));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 
     // Update is called once per frame

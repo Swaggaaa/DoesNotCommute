@@ -11,6 +11,11 @@ public static class GlobalValues {
 
     static GlobalValues()
     {
+        Init();
+    }
+
+    public static void Init()
+    {
         TimeLeft = 60;
         Running = false;
         Lost = false;

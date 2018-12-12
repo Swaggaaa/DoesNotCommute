@@ -69,6 +69,7 @@ public class StageController : MonoBehaviour {
     // TODO: I don't like this
     private void SceneManager_activeSceneChanged(Scene oldScene, Scene newScene)
     {
+        GlobalValues.Init();
         switch (newScene.name)
         {
             case "Stage1":
@@ -110,7 +111,7 @@ public class StageController : MonoBehaviour {
         GameObject.Find("Background Music").GetComponent<AudioSource>().Stop();
         audioSource.PlayOneShot(lostClip);
 
-        LoadScene("MenuScene");
+        StartCoroutine(LoadScene("MenuScene"));
     }
 
     IEnumerator LoadScene(string sceneName)

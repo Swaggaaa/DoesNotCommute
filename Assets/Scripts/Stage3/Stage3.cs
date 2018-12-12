@@ -82,7 +82,6 @@ public class Stage3 : Stage
 
     private readonly List<Vector3> coinPositions = new List<Vector3>
     {
-                new Vector3(7f, 0.5f, -15f),
         new Vector3(),
         new Vector3(3f, 0.25f, -15f),
         new Vector3(7f, 0.5f, -7f),
@@ -94,13 +93,14 @@ public class Stage3 : Stage
         new Vector3(),
         new Vector3(5f, 0.25f, -13f),
         new Vector3(),
+        new Vector3(),
         new Vector3()
     };
 
     private readonly List<GameObject> cars = new List<GameObject>
     {
-                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Van.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Big Rig.prefab"),
+        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Van.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-white.prefab"),
         AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),

@@ -11,7 +11,7 @@ public class DamageCrashCar : MonoBehaviour {
                 (Mathf.Abs(transform.localEulerAngles.z) < 75 || Mathf.Abs(transform.localEulerAngles.z) > 285))))
             return;
 
-        float damage = (GetComponent<Rigidbody>().velocity.magnitude * 10f / GetComponent<PlayerController>().maxVelocity) * (GetComponent<PlayerController>().maxHealth / 2);
+        float damage = (GetComponent<Rigidbody>().velocity.magnitude * 10f / GetComponent<PlayerController>().maxVelocity) * (100 / 2);
         Debug.Log(damage, null);
         GetComponent<PlayerController>().Health -= damage;
         

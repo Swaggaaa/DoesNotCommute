@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33419825561914612}
   - component: {fileID: 23028322831874450}
   - component: {fileID: 65143420313405644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Taxi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4378828394111032}
   - component: {fileID: 33635889545773298}
   - component: {fileID: 23818980727292126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4867903126943790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4343955279752482}
   - component: {fileID: 146883216470782820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 114547278612446546}
   - component: {fileID: 114614280593726630}
   - component: {fileID: 82836529602123946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Taxi
   m_TagString: Car
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4259590585241198}
   - component: {fileID: 146458593088024026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290489485435820}
   - component: {fileID: 146961655136501894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4007126813326160}
   - component: {fileID: 33980499455804152}
   - component: {fileID: 23416476421498812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 4396507451155422}
   - component: {fileID: 33377732896653984}
   - component: {fileID: 23466650960819888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4749009286415914}
   - component: {fileID: 33891315104380440}
   - component: {fileID: 23047720604817916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4127815319557946}
   - component: {fileID: 146958855242080204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
