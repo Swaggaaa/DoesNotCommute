@@ -243,15 +243,15 @@ public class StageController : MonoBehaviour {
 
         for (int i = 0; i < currentCarNum; ++i)
         {
+            Debug.Log(currentCarNum, null);
             playedCars.Add(Instantiate(GlobalValues.CurrentStage.Cars[i], GlobalValues.CurrentStage.BeginPositions[i], Quaternion.identity));
             playedCars[i].GetComponentInChildren<Rigidbody>().useGravity = false;
             playedCars[i].GetComponentInChildren<Rigidbody>().isKinematic = true;
 
             AudioSource[] audios = playedCars[i].GetComponents<AudioSource>();
-            
             foreach (var audio in audios)
             {
-                audio.enabled = true;
+                audio.mute = true;
             }
         }
 
