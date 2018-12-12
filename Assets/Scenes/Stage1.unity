@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44844842, g: 0.49848568, b: 0.5756304, a: 1}
+  m_IndirectSpecularColor: {r: 0.44844872, g: 0.49848646, b: 0.5756318, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5357,23 +5357,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0bfc35f4c8285b54dba7e259ae2a43b9,
     type: 3}
   m_PrefabInternal: {fileID: 544682813}
---- !u!1 &545975088 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1877949624759762, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
-    type: 2}
-  m_PrefabInternal: {fileID: 1092588990}
---- !u!114 &545975094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 545975088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dab23de59485cc4abad7572bc5db170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 800992193}
 --- !u!1 &548598606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4dd2b324026811447bc16c2abf0b902a,
@@ -6906,6 +6889,7 @@ Transform:
   - {fileID: 580930419}
   - {fileID: 1216694634}
   - {fileID: 1449902576}
+  - {fileID: 2072692044}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11042,11 +11026,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114830601930016518, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
+    - target: {fileID: 114560224891342142, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
         type: 2}
-      propertyPath: audioSource
+      propertyPath: timerText
       value: 
-      objectReference: {fileID: 330956702}
+      objectReference: {fileID: 2052803469}
     - target: {fileID: 114026019550907010, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
         type: 2}
       propertyPath: winPanel
@@ -11072,16 +11056,16 @@ Prefab:
       propertyPath: gpsArrow
       value: 
       objectReference: {fileID: 696124557}
-    - target: {fileID: 114560224891342142, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
-        type: 2}
-      propertyPath: timerText
-      value: 
-      objectReference: {fileID: 2052803469}
     - target: {fileID: 114830601930016518, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
         type: 2}
-      propertyPath: lostClip
+      propertyPath: audioSource
       value: 
-      objectReference: {fileID: 8300000, guid: 9462c521baf782747bc27be81d714e8f, type: 3}
+      objectReference: {fileID: 330956702}
+    - target: {fileID: 114203491950193292, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
+        type: 2}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 800992193}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e1dde4ab95e6d47a7f0d4850e31861, type: 2}
   m_IsPrefabAsset: 0
@@ -22634,6 +22618,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23673a45cda2e314499b900fb402557c, type: 3}
   m_IsPrefabAsset: 0
+--- !u!4 &2072692044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 23673a45cda2e314499b900fb402557c,
+    type: 3}
+  m_PrefabInternal: {fileID: 2072692043}
 --- !u!1 &2075637109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 0bfc35f4c8285b54dba7e259ae2a43b9,

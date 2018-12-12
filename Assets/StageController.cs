@@ -12,6 +12,7 @@ public class StageController : MonoBehaviour {
     public GameObject enclosingTerrain;
     public AudioSource audioSource;
     public AudioClip startClip;
+    public AudioClip wonClip;
     public AudioClip lostClip;
 
     private int currentCarNum = -1;
