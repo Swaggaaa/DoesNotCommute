@@ -1458,6 +1458,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
+--- !u!1 &259106019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1718076840007104, guid: 61d61591d0cd8ff448d15d248102af7d,
+    type: 2}
+  m_PrefabInternal: {fileID: 456419704}
 --- !u!1001 &266478148
 Prefab:
   m_ObjectHideFlags: 0
@@ -7669,6 +7674,11 @@ Prefab:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1904335040}
+    - target: {fileID: 114203491950193292, guid: 07e1dde4ab95e6d47a7f0d4850e31861,
+        type: 2}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 259106019}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e1dde4ab95e6d47a7f0d4850e31861, type: 2}
   m_IsPrefabAsset: 0
