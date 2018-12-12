@@ -298,6 +298,17 @@ public class StageController : MonoBehaviour {
         {
             light.enabled = false;
         }
+
+        AudioSource[] audios = playedCars[carNum].GetComponents<AudioSource>();
+
+        Debug.Log("sergio", null);
+        Debug.Log(audios.Length, null);
+        Debug.Log(carNum.ToString(), null);
+
+        foreach (var audio in audios)
+        {
+            audio.mute = true;
+        }
     }
 
     private void RemoveExistingEntities()
