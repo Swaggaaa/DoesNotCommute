@@ -100,10 +100,10 @@ public class Stage1 : Stage
     private readonly List<GameObject> cars = new List<GameObject>
     {
         Resources.Load<GameObject>("Cars/Car1-blue"),
-        Resources.Load<GameObject>("Cars/Taxi"),
+        Resources.Load<GameObject>("Cars/Police Car"),
         Resources.Load<GameObject>("Cars/Big Rig"),
         Resources.Load<GameObject>("Cars/Car1-white"),
-        Resources.Load<GameObject>("Cars/Police Car"),
+        Resources.Load<GameObject>("Cars/Taxi"),
         Resources.Load<GameObject>("Cars/Car1-red"),
         Resources.Load<GameObject>("Cars/Van"),
         Resources.Load<GameObject>("Cars/Car1-blue"),

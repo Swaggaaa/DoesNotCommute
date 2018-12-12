@@ -17,11 +17,8 @@ public class DamageCrashCar : MonoBehaviour {
         float health = GetComponent<PlayerController>().Health;
         float maxHealth = GetComponent<PlayerController>().maxHealth;
         ParticleSystem particles = GetComponentInChildren<ParticleSystem>(true);
-        Debug.Log("particles", particles);
         particles.gameObject.SetActive(true);
         particles.Play();
         particles.startSize = 2 * (maxHealth - health) / maxHealth;
-
-
     }
 }
