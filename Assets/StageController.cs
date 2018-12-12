@@ -104,9 +104,9 @@ public class StageController : MonoBehaviour {
     void Update ()
     {
         if (direction)
-            flock.transform.position += (GlobalValues.CurrentStage.DuckPath[1] - GlobalValues.CurrentStage.DuckPath[0]) / 1000;
+            flock.transform.position += (GlobalValues.CurrentStage.DuckPath[1] - GlobalValues.CurrentStage.DuckPath[0]) / 2000;
         else
-            flock.transform.position += (GlobalValues.CurrentStage.DuckPath[0] - GlobalValues.CurrentStage.DuckPath[1]) / 1000;
+            flock.transform.position += (GlobalValues.CurrentStage.DuckPath[0] - GlobalValues.CurrentStage.DuckPath[1]) / 2000;
 
         if ((Vector3.Distance(flock.transform.position, GlobalValues.CurrentStage.DuckPath[1]) <= 3f && direction) ||
             (Vector3.Distance(flock.transform.position, GlobalValues.CurrentStage.DuckPath[0]) <= 3f && !direction))
@@ -297,17 +297,6 @@ public class StageController : MonoBehaviour {
         foreach (var light in lights)
         {
             light.enabled = false;
-        }
-
-        AudioSource[] audios = playedCars[carNum].GetComponents<AudioSource>();
-
-        Debug.Log("sergio", null);
-        Debug.Log(audios.Length, null);
-        Debug.Log(carNum.ToString(), null);
-
-        foreach (var audio in audios)
-        {
-            audio.mute = true;
         }
     }
 
