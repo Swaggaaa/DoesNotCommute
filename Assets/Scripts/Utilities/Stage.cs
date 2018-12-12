@@ -48,4 +48,9 @@ public abstract class Stage {
     {
         get;
     }
+
+    public abstract List<Vector3> DuckPath
+    {
+        get;
+    }
 }

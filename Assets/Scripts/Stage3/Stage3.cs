@@ -99,18 +99,18 @@ public class Stage3 : Stage
 
     private readonly List<GameObject> cars = new List<GameObject>
     {
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Big Rig.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Van.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-white.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-red.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-white.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-red.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Car1-blue.prefab"),
-        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Cars/Police Car.prefab"),
+        Resources.Load<GameObject>("Cars/Big Rig"),
+        Resources.Load<GameObject>("Cars/Van"),
+        Resources.Load<GameObject>("Cars/Police Car"),
+        Resources.Load<GameObject>("Cars/Car1-white"),
+        Resources.Load<GameObject>("Cars/Police Car"),
+        Resources.Load<GameObject>("Cars/Car1-red"),
+        Resources.Load<GameObject>("Cars/Car1-blue"),
+        Resources.Load<GameObject>("Cars/Police Car"),
+        Resources.Load<GameObject>("Cars/Car1-white"),
+        Resources.Load<GameObject>("Cars/Car1-red"),
+        Resources.Load<GameObject>("Cars/Car1-blue"),
+        Resources.Load<GameObject>("Cars/Police Car"),
     };
 
     private List<List<Path>> recordedPaths = new List<List<Path>>()
@@ -133,6 +133,12 @@ public class Stage3 : Stage
     private Bounds bounds = new Bounds(new Vector3(6f, 0f, -11f), new Vector3(14f, 0f, 20f));
 
     private string nextStageName = "Credits";
+
+    private List<Vector3> duckPath = new List<Vector3>()
+    {
+        new Vector3(4f, 0f, 0f),
+        new Vector3(4f, 0f, -30f)
+    };
 
     public override List<Vector3> BeginPositions
     {
@@ -203,6 +209,14 @@ public class Stage3 : Stage
         get
         {
             return nextStageName;
+        }
+    }
+
+    public override List<Vector3> DuckPath
+    {
+        get
+        {
+            return duckPath;
         }
     }
 }

@@ -16,7 +16,7 @@ public static class GlobalValues {
 
     public static void Init()
     {
-        TimeLeft = 60;
+        TimeLeft = 2;
         Running = false;
         Lost = false;
         Won = false;

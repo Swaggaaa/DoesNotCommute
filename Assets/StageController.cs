@@ -14,9 +14,12 @@ public class StageController : MonoBehaviour {
     public AudioClip startClip;
     public AudioClip wonClip;
     public AudioClip lostClip;
+    public GameObject ducks;
 
     private int currentCarNum = -1;
     private List<GameObject> playedCars = new List<GameObject>();
+    private GameObject flock;
+    private bool direction = true;
 
     void OnEnable()
     {
@@ -62,9 +65,16 @@ public class StageController : MonoBehaviour {
 
     void Start()
     {
-        DrawBoundingWater();
-        EventManager.Trigger("NewCar");
         SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+        DrawBoundingWater();
+        SpawnDucks();
+        EventManager.Trigger("NewCar");
+    }
+
+    private void SpawnDucks()
+    {
+        flock = Instantiate(ducks, GlobalValues.CurrentStage.DuckPath[0], Quaternion.identity);
+        flock.transform.Rotate(0f, 180f, 0f);
     }
 
     // TODO: I don't like this
@@ -93,8 +103,18 @@ public class StageController : MonoBehaviour {
 
     void Update ()
     {
-		
-	}
+        if (direction)
+            flock.transform.position += (GlobalValues.CurrentStage.DuckPath[1] - GlobalValues.CurrentStage.DuckPath[0]) / 1000;
+        else
+            flock.transform.position += (GlobalValues.CurrentStage.DuckPath[0] - GlobalValues.CurrentStage.DuckPath[1]) / 1000;
+
+        if ((Vector3.Distance(flock.transform.position, GlobalValues.CurrentStage.DuckPath[1]) <= 3f && direction) ||
+            (Vector3.Distance(flock.transform.position, GlobalValues.CurrentStage.DuckPath[0]) <= 3f && !direction))
+        {
+            direction = !direction;
+            flock.transform.Rotate(0f, 180f, 0f);
+        }
+    }
 
     void Running()
     {
@@ -112,7 +132,7 @@ public class StageController : MonoBehaviour {
         GameObject.Find("Background Music").GetComponent<AudioSource>().Stop();
         audioSource.PlayOneShot(lostClip);
 
-        StartCoroutine(LoadScene("MenuScene"));
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().name));
     }
 
     IEnumerator LoadScene(string sceneName)
@@ -270,6 +290,13 @@ public class StageController : MonoBehaviour {
         {
             renderer.material.shader = Shader.Find("Transparent/Diffuse");
             renderer.material.color = new Color(1f, 1f, 1f, 0.3f);
+        }
+
+        Light[] lights = playedCars[carNum].GetComponentsInChildren<Light>();
+
+        foreach (var light in lights)
+        {
+            light.enabled = false;
         }
     }
 
