@@ -44,6 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 0}
   lostPanel: {fileID: 0}
+  bloodPanel: {fileID: 0}
   speedometer: {fileID: 0}
   healthSlider: {fileID: 0}
   gpsArrow: {fileID: 0}
@@ -102,6 +103,7 @@ MonoBehaviour:
   startClip: {fileID: 8300000, guid: 584a790b27aaaa8429f501e3f7abd54e, type: 3}
   wonClip: {fileID: 8300000, guid: f5b17f7eabf8b9d4da4531745aa43bc6, type: 3}
   lostClip: {fileID: 8300000, guid: 9462c521baf782747bc27be81d714e8f, type: 3}
+  chickenClip: {fileID: 8300000, guid: de6aecf4fd656704b89e8ac857c18711, type: 3}
   ducks: {fileID: 1218040571576810, guid: 320f445255fe26444b61e2b0abd13505, type: 2}
 --- !u!224 &224776591785668556
 RectTransform:

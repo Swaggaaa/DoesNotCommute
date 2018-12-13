@@ -14,6 +14,7 @@ public class StageController : MonoBehaviour {
     public AudioClip startClip;
     public AudioClip wonClip;
     public AudioClip lostClip;
+    public AudioClip chickenClip;
     public GameObject ducks;
 
     private int currentCarNum = -1;
@@ -29,6 +30,7 @@ public class StageController : MonoBehaviour {
         EventManager.StartListener("Running", Running);
         EventManager.StartListener("Won", Won);
         EventManager.StartListener("Lost", Lost);
+        EventManager.StartListener("ChickenDie", ChickenDie);
     }
 
     void OnDisable()
@@ -39,6 +41,7 @@ public class StageController : MonoBehaviour {
         EventManager.StopListener("Running", Running);
         EventManager.StopListener("Won", Won);
         EventManager.StopListener("Lost", Lost);
+        EventManager.StopListener("ChickenDie", ChickenDie);
     }
 
     void Awake()
@@ -69,6 +72,11 @@ public class StageController : MonoBehaviour {
         DrawBoundingWater();
         SpawnDucks();
         EventManager.Trigger("NewCar");
+    }
+
+    private void ChickenDie()
+    {
+        audioSource.PlayOneShot(chickenClip, 1f);
     }
 
     private void SpawnDucks()

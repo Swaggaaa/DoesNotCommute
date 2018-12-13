@@ -8,6 +8,7 @@ public class UILogic : MonoBehaviour {
 
     public GameObject winPanel;
     public GameObject lostPanel;
+    public GameObject bloodPanel;
     public Text speedometer;
     public Slider healthSlider;
     public GameObject gpsArrow;
@@ -22,12 +23,14 @@ public class UILogic : MonoBehaviour {
     {
         EventManager.StartListener("Won", Won);
         EventManager.StartListener("Lost", Lost);
+        EventManager.StartListener("ChickenDie", ChickenDie);
     }
 
     void OnDisable()
     {
         EventManager.StopListener("Won", Won);
         EventManager.StopListener("Lost", Lost);
+        EventManager.StopListener("ChickenDie", ChickenDie);
     }
 
     private void Won()
@@ -40,6 +43,30 @@ public class UILogic : MonoBehaviour {
     {
         lostPanel.SetActive(true);
         StartCoroutine(FadePanel(lostPanel));
+    }
+
+    private void ChickenDie()
+    {
+        bloodPanel.SetActive(true);
+        Color color = bloodPanel.GetComponent<Image>().color;
+        bloodPanel.GetComponentInChildren<Image>().color = new Color(color.r, color.g, color.b, 0.6f);
+        StartCoroutine(FadeOutBlood());
+    }
+
+    private IEnumerator FadeOutBlood()
+    {
+        yield return new WaitForSeconds(1f);
+        Color color = bloodPanel.GetComponentInChildren<Image>().color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 2f)
+        {
+            bloodPanel.GetComponentInChildren<Image>().color = new Color(color.r, color.g, color.b, Mathf.Lerp(0.6f, 0f, elapsedTime / 2f));
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        bloodPanel.SetActive(false);
     }
 
     private IEnumerator FadePanel(GameObject panel)
