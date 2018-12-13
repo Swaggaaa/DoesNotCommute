@@ -132,6 +132,7 @@ public class StageController : MonoBehaviour {
     void Won()
     {
         GlobalValues.Won = true;
+        audioSource.PlayOneShot(wonClip);
         StartCoroutine(LoadScene(GlobalValues.CurrentStage.NextStageName));
     }
 
