@@ -122,6 +122,9 @@ public class StageController : MonoBehaviour {
             direction = !direction;
             flock.transform.Rotate(0f, 180f, 0f);
         }
+
+        if (Input.GetKeyDown(KeyCode.G))
+            GlobalValues.TimeLeft = 100000.0f;
     }
 
     void Running()
