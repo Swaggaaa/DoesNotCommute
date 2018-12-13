@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DamageCrashCar : MonoBehaviour {
 
@@ -19,6 +17,6 @@ public class DamageCrashCar : MonoBehaviour {
         ParticleSystem particles = GetComponentInChildren<ParticleSystem>(true);
         particles.gameObject.SetActive(true);
         particles.Play();
-        particles.startSize = 2 * (maxHealth - health) / maxHealth;
+        particles.startSize = 3 * (maxHealth - health) / maxHealth;
     }
 }
