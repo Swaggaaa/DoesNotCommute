@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     //0f - maxHealth
     public float Health { get; set; }
 
-    public void ApplyLocalPositionToVisuals(WheelCollider collider)
+    public void UpdateVisualWheel(WheelCollider collider)
     {
         if (collider.transform.childCount == 0)
             return;
@@ -67,20 +67,20 @@ public class PlayerController : MonoBehaviour
         if (GetComponent<Rigidbody>().velocity.magnitude * 10f > maxVelocity * HealthNormalized)
             motor = 0;
 
-        foreach (AxleInfo axleInfo in axleInfos)
+        foreach (AxleInfo axle in axleInfos)
         {
-            if (axleInfo.steering)
+            if (axle.steering)
             {
-                axleInfo.leftWheel.steerAngle = steering;
-                axleInfo.rightWheel.steerAngle = steering;
+                axle.leftWheel.steerAngle = steering;
+                axle.rightWheel.steerAngle = steering;
             }
-            if (axleInfo.motor)
+            if (axle.motor)
             {
-                axleInfo.leftWheel.motorTorque = motor;
-                axleInfo.rightWheel.motorTorque = motor;
+                axle.leftWheel.motorTorque = motor;
+                axle.rightWheel.motorTorque = motor;
             }
-            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
-            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+            UpdateVisualWheel(axle.leftWheel);
+            UpdateVisualWheel(axle.rightWheel);
         }
 
         float stuck = Input.GetAxis("Jump");
