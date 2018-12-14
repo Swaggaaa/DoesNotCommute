@@ -73,7 +73,7 @@ public class Stage1 : Stage
         new Vector3(-10f, 0.25f, -25f),
         new Vector3(-16f, 0.25f, -8f),
         new Vector3(-14f, 0.25f, -23f),
-        new Vector3(-16f, 0.25f, -22f),
+        new Vector3(-16f, 0.25f, -12f),
         new Vector3(-10f, 0.25f, -19f),
         new Vector3(2.35f, 0.25f, -8f),
         new Vector3(-14f, 0.25f, -30f),

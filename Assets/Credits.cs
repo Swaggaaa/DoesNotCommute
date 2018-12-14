@@ -12,7 +12,7 @@ public class Credits : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.anyKey)
+		if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MenuScene");
         }
@@ -20,7 +20,7 @@ public class Credits : MonoBehaviour {
 
     private IEnumerator PlayCredits()
     {
-        yield return new WaitForSeconds(120f);
+        yield return new WaitForSeconds(60f);
 
         SceneManager.LoadScene("MenuScene");
     }

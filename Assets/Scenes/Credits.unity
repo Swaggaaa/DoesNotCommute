@@ -344,7 +344,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -133, y: -196.60004}
-  m_SizeDelta: {x: 219.8, y: 748.1}
+  m_SizeDelta: {x: 219.8, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156570602
 MonoBehaviour:
@@ -393,6 +393,28 @@ MonoBehaviour:
 
 
     Level Designer
+
+
+    Unity Expert
+
+
+    Game Designers
+
+
+
+    Software Architect
+
+
+    Senior Developers
+
+
+
+    Animators
+
+
+
+    Agile Master
+
 
 
     Special Thanks'
@@ -702,7 +724,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 228, y: -196.6}
-  m_SizeDelta: {x: 411.3, y: 748.1}
+  m_SizeDelta: {x: 411.3, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1847097897
 MonoBehaviour:
@@ -738,8 +760,10 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "nullptr\n\nLmao I ripped everything from the internet\n\nSergio 'Walls'
     Paredes\n\nSergio 'Walls' Paredes\nSergi 'Swaggaaa' Ib\xE0nyez\n\nSergi 'Swaggaaa'
-    Ib\xE0nyez\n\n- Everybody we stole art from\n- My parents for wasting money on
-    my career\n- \"Lorem ipsum dolor sit amet\"\n- Rosal\xEDa"
+    Ib\xE0nyez\n\nLol I wish\n\nSergio 'Walls' Paredes\nSergi 'Swaggaaa' Ib\xE0nyez\n\nSergi
+    'Swaggaaa' Ib\xE0nyez\n\nSergio 'Walls' Paredes\nSergi 'Swaggaaa' Ib\xE0nyez\n\nSergio
+    'Walls' Paredes\nSergi 'Swaggaaa' Ib\xE0nyez\n\nSergio 'Walls' Paredes\n\n- Everybody
+    we stole art from\n- My parents for wasting money on my career\n- Rosal\xEDa"
 --- !u!222 &1847097898
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -882,7 +906,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Counter-Commute Global Does Not
+  m_Text: Time Looper
 --- !u!222 &2112799506
 CanvasRenderer:
   m_ObjectHideFlags: 0

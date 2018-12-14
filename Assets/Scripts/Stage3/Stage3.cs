@@ -136,8 +136,8 @@ public class Stage3 : Stage
 
     private List<Vector3> duckPath = new List<Vector3>()
     {
-        new Vector3(4f, 0f, 0f),
-        new Vector3(4f, 0f, -30f)
+        new Vector3(-1f, 0f, -2f),
+        new Vector3(-1f, 0f, -20f)
     };
 
     public override List<Vector3> BeginPositions
